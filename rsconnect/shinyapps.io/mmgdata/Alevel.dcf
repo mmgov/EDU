@@ -1,0 +1,12 @@
+name: Alevel
+title: EDU
+username: mmgdata
+account: mmgdata
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11255102
+bundleId: 9011303
+url: https://mmgdata.shinyapps.io/Alevel/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
