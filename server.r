@@ -186,6 +186,23 @@ output$boxplot_scores <- renderPlot({
     theme(legend.position = "none")
 })
 
+output$region_bar_chart <- renderPlot({
+  alc %>%
+    group_by(TOWN) %>%
+    summarise(Mean_Score = mean(TALLPPE_ALEV_1618, na.rm = TRUE)) %>%
+    ggplot(aes(x = reorder(TOWN, Mean_Score), y = Mean_Score, fill = TOWN)) +
+    geom_bar(stat = "identity") +
+    coord_flip() +
+    labs(
+      title = "Mean TALLPPE_ALEV_1618 by Region",
+      x = "TOWN",
+      y = "Mean TALLPPE_ALEV_1618"
+    ) +
+    theme_minimal() +
+    theme(legend.position = "none")
+})
+
+
 
 }
 

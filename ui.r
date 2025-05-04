@@ -320,6 +320,19 @@ tabPanel(
     plotOutput("boxplot_scores2")
   ),
 ),
+
+tabPanel(
+  "Boxplot of Regionnal Scores",
+  mainPanel(
+    strong("Distribution of TALLPPE_ALEV_1618 by Region", style = "font-size: 30px;"),
+    br(),
+    plotOutput("region_bar_chart")
+  ),
+  fluidPage(
+    plotOutput("region_bar_chart")
+  ),
+),
+
 collapsible = TRUE
 )
 
