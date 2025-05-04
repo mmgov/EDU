@@ -308,6 +308,18 @@ tabPanel(
   )
 ),
 
+
+tabPanel(
+  "Boxplot of Scores",
+  mainPanel(
+    strong("Distribution of TALLPPE_ALEV_1618 by School Type", style = "font-size: 30px;"),
+    br(),
+    plotOutput("boxplot_scores")
+  ),
+  fluidPage(
+    plotOutput("boxplot_scores2")
+  ),
+),
 collapsible = TRUE
 )
 

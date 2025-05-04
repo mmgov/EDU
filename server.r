@@ -171,6 +171,22 @@ output$download_scores <- downloadHandler(
   }
 )
 
+output$boxplot_scores <- renderPlot({
+  alc %>%
+    mutate(SCHOOLTYPE = fct_reorder(SCHOOLTYPE, TALLPPE_ALEV_1618, .fun = median, .desc = FALSE)) %>%
+    ggplot(aes(x = SCHOOLTYPE, y = TALLPPE_ALEV_1618, fill = SCHOOLTYPE)) +
+    geom_boxplot(outlier.color = "red", outlier.shape = 1) +
+    coord_flip() +
+    labs(
+      title = "Distribution of TALLPPE_ALEV_1618 by School Type",
+      x = "School Type",
+      y = "TALLPPE_ALEV_1618"
+    ) +
+    theme_minimal() +
+    theme(legend.position = "none")
+})
+
+
 }
 
 
